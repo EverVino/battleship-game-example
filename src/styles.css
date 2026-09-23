@@ -1,0 +1,14 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #dcdee4;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin:0;
+
+}
+
+
