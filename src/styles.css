@@ -14,6 +14,7 @@ html {
     --primary-color: #65a3e6;
     --secondary-color: #6c757d;
     --background-color: #f8f9fa;
+    --ship-color: #614207;
 }
 
 body {
@@ -31,9 +32,10 @@ main {
 }
 
 .contenedor {
-    flex-grow: 3;
+    flex-grow: 2;
     display: flex;
     gap: 30px;
+    padding: 30px;
 }
 
 .info-game {
@@ -49,6 +51,15 @@ main {
 
 .cell {
     background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1fr ;
+    height: 1fr;
+}
+
+.cell-ship {
+    background-color: var(--ship-color);
     display: flex;
     justify-content: center;
     align-items: center;

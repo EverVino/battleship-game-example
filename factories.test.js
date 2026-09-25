@@ -1,7 +1,7 @@
-import { Ship } from "./src/factories.js";
+import { Ship, Gameboard } from "./src/factories.js";
 
 test("Test ship", () => {
-    const ship = Ship(3);
+    const ship = Ship("normal", 3, [[0,0], [0,1], [0,2]] );
     expect(ship.isSunk()).toBe(false);
 
     ship.hit();
@@ -10,6 +10,25 @@ test("Test ship", () => {
     expect(ship.isSunk()).toBe(true);
 })
 
+test("Create gameboard", () => {
+    const gameboard = Gameboard();
+    gameboard.fillGameboard();
+    let counter = 0;
+    for(let i=0; i<10;i++) {
+        for(let j=0; j<10; j++) {
+            let cell = gameboard.board[i][j];
+            if (cell!=0) {
+                counter++;
+            }
+        }
+    }
+
+    expect(counter).toBe(16);
+}) 
+
+// TODO: Implement check neigbors test
+
+// Keeping this for reference
 //test("Test Capitalize", () => {
 //    expect(capitalize("hello")).toBe("Hello");
 //})

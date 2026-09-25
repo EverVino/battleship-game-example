@@ -1,9 +1,9 @@
 
-const Ship = (name, size, coordinates) => {
+const Ship = (key, size, coordinates) => {
     let len = size;
     let hitsTaken = 0;
     let position = coordinates;
-    let name = name;
+    let name = key;
 
     function hit() {
         hitsTaken++;
@@ -41,17 +41,15 @@ const Gameboard = (size=10) => {
         let lst = [];
 
         if (vh==1){
-            x = Math.floor(Math.random()*(len));
-            y = Math.floor(Math.random()*(len-size));
-            lst.push([x,y]);
+            x = Math.floor(Math.random()*(10));
+            y = Math.floor(Math.random()*(10-size));
             for (let i=0; i<size; i++) {
                     lst.push([x,y+i]);
             }
         }
         else {
-            x = Math.floor(Math.random()*(len-size));
-            y = Math.floor(Math.random()*(len));
-            lst.push([x,y]);
+            x = Math.floor(Math.random()*(10-size));
+            y = Math.floor(Math.random()*(10));
             for (let i=0; i<size; i++) {
                     lst.push([x+i,y]);
             }
@@ -63,7 +61,7 @@ const Gameboard = (size=10) => {
         for (let coor of coordinates) {
             let [x, y] = coor;
 
-            if (board[x,y]!=0){
+            if (board[x][y]!=0){
                 return false;
             }
 
@@ -103,11 +101,16 @@ const Gameboard = (size=10) => {
 
             let n = ships.length;
 
-            for (let coor in coordinates) {
+            for (let coor of coordinates) {
                 let [x, y] = coor;
                 board[x][y] = n;
             }
+            
         }
+        console.table(board)
+        // for (let k=0;k<board.length;k++){
+        //     console.table(board[k])
+        // }
     }
     
     function receiveAttack(attackCoord){
@@ -138,6 +141,6 @@ const Gameboard = (size=10) => {
 const Player = () => {
     const gameboard = Gameboard();
     gameboard.fillGameboard();
-    return {gameboard}
+    return { gameboard }
 }
-export { Ship, Gameboard };
+export { Ship, Gameboard, Player };
