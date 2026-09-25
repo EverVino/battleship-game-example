@@ -2,19 +2,12 @@ html {
     box-sizing: border-box;
 }
 
-*, *::before, *::after {
-    box-sizing: inherit;
-}
-
-* {
-    border: 1px solid red;   /* Add a red border to all elements */
-}
-
 :root {
     --primary-color: #65a3e6;
-    --secondary-color: #6c757d;
+    --secondary-color: #2c974b;
     --background-color: #f8f9fa;
-    --ship-color: #614207;
+    --ship-color: #d2aa45;
+    --color: #E1E1E1;
 }
 
 body {
@@ -25,6 +18,10 @@ body {
     background-color: var(--background-color);
     padding: 0 10% 0 10%;
     margin: 0;
+    background-color: #F3F3F3;
+    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+        linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+    background-size: 55px 55px;
 }
 
 main {
@@ -32,21 +29,19 @@ main {
 }
 
 .contenedor {
-    flex-grow: 2;
+    flex-grow: 3;
     display: flex;
-    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    gap: 12%;
     padding: 30px;
-}
-
-.info-game {
-    flex:1;
 }
 
 .gameboard {
     display: grid;
-    flex: 2;
     grid-template-columns: repeat(10, 1fr);
     gap:1px;
+    
 }
 
 .cell {
@@ -54,8 +49,9 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1fr ;
-    height: 1fr;
+    width: 40px ;
+    height: 40px;
+    overflow: visible;
 }
 
 .cell-ship {
@@ -63,9 +59,51 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1fr ;
-    height: 1fr;
+    width: 40px ;
+    height: 40px;
 }
 
+.icon {
+  width: 2rem;  /* 24px */
+  height: 2rem; /* 24px */
+}
+
+.info-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.info-game {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10%;
+    flex:1;
+    gap: 20px;
+}
+
+button {
+    height: 30px;
+    background-color: #65a3e6;
+    padding: 6px 16px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    
+}
+.start {
+    background-color: var(--secondary-color);
+}
+
+.status {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 50px ;
+}
 
 

@@ -107,10 +107,6 @@ const Gameboard = (size=10) => {
             }
             
         }
-        console.table(board)
-        // for (let k=0;k<board.length;k++){
-        //     console.table(board[k])
-        // }
     }
     
     function receiveAttack(attackCoord){
@@ -119,14 +115,16 @@ const Gameboard = (size=10) => {
             const shipIdx = board[x][y] - 1;
             ships[shipIdx].hit()
             board[x][y] = 'x';
+            return true;
         }
         else {
             board[x][y] = -1;
+            return false;
         }
     }
     
     function isLostGame() {
-        for (let ship in ships) {
+        for (let ship of ships) {
             if (!ship.isSunk()) {
                 return false;
             }
