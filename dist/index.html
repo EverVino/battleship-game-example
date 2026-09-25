@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Battle Ship</title>
+<script defer src="main.js"></script></head>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol  id="x-mark" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="red">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </symbol>
+        <symbol id="dot" viewBox="0 0 640 640" fill="cyan">
+            <!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+            <path d="M64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320z"/>
+        </symbol>
+    </svg>
+
+    <header>
+        <h1>BATTLE SHIPS</h1>
+    </header>
+    <div class="instrucciones">
+        <h2> Instructions </h2>
+        <p>
+            On the left side, you have the position of your ships.
+            On the right is enemy sea where are the enemy ships, you have to 
+            discover where the the enemy ships are. To start a new game click on Start Game
+        </p>
+    </div>
+    <div>
+        <div>
+            <button class="start" id="start-btn">Start game</button>
+            <button id="suffle-btn">Suffle Sea</button>
+            <button id="restart-btn">Restart Gameboard</button>
+        </div>
+        <h1 class="status" id="game-status"></h1>
+    </div>
+
+    <main class="contenedor">
+        <div class="gameboard player-grid" id="humano">
+        </div>
+        <div class="gameboard computer-grid" id="maquina">
+        </div>
+    </main>
+    <div class="info-game">
+        <div class="info-row">
+            <h3>Collision: </h3>
+            <svg class="x-mark icon">
+                <use href="#x-mark"></use>
+            </svg>
+        </div>
+        <div class="info-row">
+            <h3>No collision: </h3>
+            <svg class="icon">
+                <use href="#dot"></use>
+            </svg>
+        </div>
+    </div>
+</body>
+
+</html>

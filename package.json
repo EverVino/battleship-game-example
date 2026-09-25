@@ -2,10 +2,12 @@
   "name": "battleship",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://EverVino.github.io/battleship-game-example/",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "serve": "webpack serve",
+    "build": "webpack build",
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],
